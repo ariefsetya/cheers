@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRiwayatUndiansTable extends Migration
+class CreateConfigurationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreateRiwayatUndiansTable extends Migration
      */
     public function up()
     {
-        Schema::create('riwayat_undians', function (Blueprint $table) {
+        Schema::create('configurations', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_undian');//from undians
-            $table->integer('id_peserta');//from peserta_undians
-            $table->integer('id_hadiah');//from hadiah_undians
-            $table->string('status');// win / loss 
+            $table->string('key');
+            $table->string('content');
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ class CreateRiwayatUndiansTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('riwayat_undians');
+        Schema::dropIfExists('configurations');
     }
 }

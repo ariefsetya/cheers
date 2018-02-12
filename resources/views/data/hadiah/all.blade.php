@@ -14,27 +14,21 @@
 		<a class="btn" href="{{route('data_hadiah')}}">Data Hadiah</a>
 		<a class="btn" href="{{route('data_peserta_undian')}}">Data Peserta Undian</a>
 		<hr>
-		<h2>Data Undian</h2>
-		<!-- <a class="btn right" href="{{route('data_undian_add')}}">Tambah Data Undian</a> -->
+		<h2>Data Hadiah</h2>
+		<a class="btn right" href="{{route('data_hadiah_add')}}">Tambah Data Hadiah</a>
 
 		<table class="highlight">
 			<thead>
-				<th>Title</th>
-				<th>Stops</th>
-				<th>Max Running</th>
-				<th>Duration</th>
+				<th>Hadiah</th>
 				<th>Edit</th>
-				<!-- <th>Delete</th> -->
+				<th>Delete</th>
 			</thead>
 			<tbody>
 				@foreach($data as $key)
 				<tr>
-					<td>{{$key->name}}</td>
-					<td>{{$key->stops}}</td>
-					<td>{{$key->max_running}}</td>
-					<td>{{$key->duration}}s</td>
-					<td><a href="{{route('data_undian_edit',$key->id)}}">Edit</a></td>
-					<!-- <td><a onclick="return confirm('Hapus data undian {{$key->name}}?');" href="{{route('data_undian_delete',$key->id)}}">Delete</a></td> -->
+					<td>{{$key->hadiah}}</td>
+					<td><a href="{{route('data_hadiah_edit',$key->id)}}">Edit</a></td>
+					<td><a onclick="return confirm('Hapus data hadiah {{$key->name}}?');" href="{{route('data_hadiah_delete',$key->id)}}">Delete</a></td>
 				</tr>
 				@endforeach
 			</tbody>
